@@ -28,4 +28,5 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/karyawan/{id}/edit', 'App\Http\Controllers\KaryawanController@edit');
     Route::post('/karyawan/{id}/update', 'App\Http\Controllers\KaryawanController@update');
     Route::get('/karyawan/{id}/delete', 'App\Http\Controllers\KaryawanController@delete');
+    Route::get('/karyawan/{id}/profile', 'App\Http\Controllers\KaryawanController@profile');
 });

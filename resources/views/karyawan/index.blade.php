@@ -34,8 +34,8 @@
 										<tbody>
                                         @foreach($data_karyawan as $karyawan)
                                         <tr>
-                                            <td>{{$karyawan->nama_depan}}</td>
-                                            <td>{{$karyawan->nama_belakang}}</td>
+                                            <td><a href="/karyawan/{{$karyawan->id}}/profile">{{$karyawan->nama_depan}}</a></td>
+                                            <td><a href="/karyawan/{{$karyawan->id}}/profile">{{$karyawan->nama_belakang}}</a></td>
                                             <td>{{$karyawan->jenis_kelamin}}</td>
                                             <td>{{$karyawan->bidang_pekerjaan}}</td>
                                             <td>{{$karyawan->alamat}}</td>

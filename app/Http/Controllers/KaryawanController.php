@@ -46,4 +46,10 @@ class KaryawanController extends Controller
         
         return redirect('/karyawan')->with('sukses','Data berhasil dihapus!');
     }
+    
+    public function profile($id)
+    {
+        $karyawan = \App\Models\karyawan::find($id);
+        return view('karyawan.profile',['karyawan' => $karyawan]);
+    }
 }
