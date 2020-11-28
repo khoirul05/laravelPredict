@@ -33,8 +33,14 @@ class KaryawanController extends Controller
 
     public function update(Request $request,$id)
     {
+        // dd($request->all());
         $karyawan = \App\Models\karyawan::find($id);
         $karyawan->update($request->all());
+        if($request->hasFile('avatar')){
+            $request->file('avatar')->move('images',$request->file('avatar')->getClientOriginalName());
+            $karyawan->avatar = $request->file('avatar')->getClientOriginalName();
+            $karyawan->save();
+        }
 
         return redirect('/karyawan')->with('sukses','Data berhasil diupdate!');
     }
