@@ -79,6 +79,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="email">Email</label>
+                            <input name="email" type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        
+                        <div class="form-group">
                             <label for="jeniskelamin">Jenis Kelamin</label>
                             <select name="jenis_kelamin" class="form-control" id="jeniskelamin">
                                 <option value="L">Laki-laki</option>

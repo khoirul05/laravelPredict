@@ -11,7 +11,7 @@ class Karyawan extends Model
     
     protected $table = 'karyawan';
 
-    protected $fillable = ['nama_depan','nama_belakang','jenis_kelamin','bidang_pekerjaan','alamat','avatar'];
+    protected $fillable = ['nama_depan','nama_belakang','jenis_kelamin','bidang_pekerjaan','alamat','avatar','user_id'];
 
     public function getAvatar()
     {

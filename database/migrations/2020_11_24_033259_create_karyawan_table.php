@@ -15,11 +15,13 @@ class CreateKaryawanTable extends Migration
     {
         Schema::create('karyawan', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('nama_depan');
             $table->string('nama_belakang');
             $table->string('jenis_kelamin');
             $table->string('bidang_pekerjaan');
             $table->text('alamat');
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

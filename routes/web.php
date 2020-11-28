@@ -21,8 +21,8 @@ Route::get('/login', 'App\Http\Controllers\AuthController@login')->name('login')
 Route::post('/postlogin', 'App\Http\Controllers\AuthController@postlogin');
 Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
 
-Route::group(['middleware' => 'auth'],function(){
-    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+
+Route::group(['middleware' => ['auth','checkRole:admin']],function(){
     Route::get('/karyawan', 'App\Http\Controllers\KaryawanController@index');
     Route::post('/karyawan/create', 'App\Http\Controllers\KaryawanController@create');
     Route::get('/karyawan/{id}/edit', 'App\Http\Controllers\KaryawanController@edit');
@@ -30,3 +30,7 @@ Route::group(['middleware' => 'auth'],function(){
     Route::get('/karyawan/{id}/delete', 'App\Http\Controllers\KaryawanController@delete');
     Route::get('/karyawan/{id}/profile', 'App\Http\Controllers\KaryawanController@profile');
 });
+
+Route::group(['middleware' => ['auth','checkRole:admin,karyawan']],function(){
+    Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+});    
