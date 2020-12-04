@@ -22,13 +22,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($data_hasil as $hasil)
+                                    @foreach($dataset as $data)
                                         <tr>
-                                            <td>{{$hasil->no}}</td>
-                                            <td>{{$hasil->tanggal}}</td>
-                                            <td>{{$hasil->aluminium_cash}}</td>
-                                            <td>{{$hasil->aluminium}}</td>
-                                            <td>{{$hasil->alumina}}</td>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->tanggal}}</td>
+                                            <td>{{$data->aluminium_cash}}</td>
+                                            <td>{{$data->aluminium}}</td>
+                                            <td>{{$data->alumina}}</td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -152,7 +152,7 @@
             text: ''
         },
         xAxis: {
-            categories: {!!json_encode($categories)!!},
+            tanggal: {!!json_encode($tanggal)!!},
             crosshair: true
         },
         yAxis: {
@@ -202,7 +202,7 @@
             text: ''
         },
         xAxis: {
-            categories: {!!json_encode($categories)!!},
+            tanggal: {!!json_encode($tanggal)!!},
             crosshair: true
         },
         yAxis: {
@@ -245,7 +245,7 @@
             text: ''
         },
         xAxis: {
-            categories: {!!json_encode($categories)!!},
+            tanggal: {!!json_encode($tanggal)!!},
             crosshair: true
         },
         yAxis: {
@@ -288,7 +288,7 @@
             text: ''
         },
         xAxis: {
-            categories: {!!json_encode($categories)!!},
+            tanggal: {!!json_encode($tanggal)!!},
             crosshair: true
         },
         yAxis: {

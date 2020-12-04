@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $data_hasil = \App\Models\Hasil::all();
-        return view('dashboards.index',['data_hasil' => $data_hasil]);
+        $dataset = \App\Models\Dataset::all();
+        return view('dashboards.index',['dataset' => $dataset]);
     }
 }

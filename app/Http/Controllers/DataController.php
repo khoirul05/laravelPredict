@@ -8,7 +8,7 @@ class DataController extends Controller
 {
     public function index()
     {
-        $data_hasil = \App\Models\Hasil::all(); 
+        $dataset = \App\Models\Dataset::all(); 
         $prediksi = \App\Models\Prediksi::all(); 
         
         // Data Chart
@@ -18,7 +18,7 @@ class DataController extends Controller
         $alumina = [];
 
         foreach($prediksi as $p){
-            $categories[] = $p->tanggal;
+            $tanggal[] = $p->tanggal;
             $aluminium_cash[] = $p->aluminium_cash;
             $aluminium[] = $p->aluminium;
             $alumina[] = $p->alumina;
@@ -27,6 +27,6 @@ class DataController extends Controller
 
         // dd(json_encode($aluminium));
 
-        return view('data.index',['data_hasil' => $data_hasil,'categories' => $categories,'aluminium_cash' => $aluminium_cash,'aluminium' => $aluminium,'alumina' => $alumina]);
+        return view('data.index',['dataset' => $dataset,'tanggal' => $tanggal,'aluminium_cash' => $aluminium_cash,'aluminium' => $aluminium,'alumina' => $alumina]);
     }
 }
