@@ -8,6 +8,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboards.index');
+        $data_hasil = \App\Models\Hasil::all();
+        return view('dashboards.index',['data_hasil' => $data_hasil]);
     }
 }

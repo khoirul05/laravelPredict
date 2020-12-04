@@ -33,4 +33,5 @@ Route::group(['middleware' => ['auth','checkRole:admin']],function(){
 
 Route::group(['middleware' => ['auth','checkRole:admin,karyawan']],function(){
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+    Route::get('/data', 'App\Http\Controllers\DataController@index');
 });    
